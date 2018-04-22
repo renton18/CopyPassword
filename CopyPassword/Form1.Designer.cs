@@ -35,18 +35,21 @@
             this.password_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Remark_tb = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // account_lb
             // 
+            this.account_lb.BackColor = System.Drawing.Color.LightGreen;
             this.account_lb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.account_lb.FormattingEnabled = true;
             this.account_lb.ItemHeight = 12;
             this.account_lb.Location = new System.Drawing.Point(0, 0);
             this.account_lb.Name = "account_lb";
             this.account_lb.Size = new System.Drawing.Size(146, 216);
+            this.account_lb.Sorted = true;
             this.account_lb.TabIndex = 0;
             this.account_lb.SelectedIndexChanged += new System.EventHandler(this.account_lb_SelectedIndexChanged);
             // 
@@ -74,21 +77,22 @@
             this.id_lb.Location = new System.Drawing.Point(0, 0);
             this.id_lb.Name = "id_lb";
             this.id_lb.Size = new System.Drawing.Size(146, 216);
+            this.id_lb.Sorted = true;
             this.id_lb.TabIndex = 0;
             this.id_lb.SelectedIndexChanged += new System.EventHandler(this.id_lb_SelectedIndexChanged);
             // 
             // password_tb
             // 
-            this.password_tb.Location = new System.Drawing.Point(82, 12);
+            this.password_tb.Location = new System.Drawing.Point(71, 12);
             this.password_tb.Name = "password_tb";
             this.password_tb.PasswordChar = '*';
-            this.password_tb.Size = new System.Drawing.Size(228, 19);
+            this.password_tb.Size = new System.Drawing.Size(239, 19);
             this.password_tb.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 15);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 5;
@@ -98,17 +102,26 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.label2.Location = new System.Drawing.Point(244, 34);
+            this.label2.Location = new System.Drawing.Point(69, 34);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 12);
+            this.label2.Size = new System.Drawing.Size(186, 12);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Ctrl + Shift ";
+            this.label2.Text = "F1:追加　Ctrl + Shift:パスワード表示 ";
+            // 
+            // Remark_tb
+            // 
+            this.Remark_tb.Location = new System.Drawing.Point(316, 49);
+            this.Remark_tb.Multiline = true;
+            this.Remark_tb.Name = "Remark_tb";
+            this.Remark_tb.Size = new System.Drawing.Size(149, 213);
+            this.Remark_tb.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(328, 277);
+            this.ClientSize = new System.Drawing.Size(471, 277);
+            this.Controls.Add(this.Remark_tb);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.password_tb);
@@ -136,6 +149,7 @@
         private System.Windows.Forms.TextBox password_tb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Remark_tb;
     }
 }
 

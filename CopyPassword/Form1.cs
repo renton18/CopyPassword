@@ -38,17 +38,21 @@ namespace CopyPassword
             if (e.KeyCode == Keys.Right)
             {
                 id_lb.Focus();
+                account_lb.BackColor = Color.White;
+                id_lb.BackColor = Color.LightGreen;
                 e.Handled = true;
 
-            }
-            if (e.Shift && e.Control)
-            {
-                password_tb.PasswordChar = '\0';
             }
             if (e.KeyCode == Keys.Left)
             {
                 account_lb.Focus();
+                account_lb.BackColor = Color.LightGreen;
+                id_lb.BackColor = Color.White;
                 e.Handled = true;
+            }
+            if (e.Shift && e.Control)
+            {
+                password_tb.PasswordChar = '\0';
             }
             if (e.KeyCode == Keys.Enter)
             {
@@ -78,13 +82,14 @@ namespace CopyPassword
             }
             id_lb.SelectedIndex = 0;
         }
-
+        
         private void id_lb_SelectedIndexChanged(object sender, EventArgs e)
         {
             var passwordText = accountList.Where(a => a[0] == account_lb.SelectedItem.ToString())
                               .Where(a => a[1] == id_lb.SelectedItem.ToString()).Single();
 
             password_tb.Text = passwordText[2];
+            Remark_tb.Text = passwordText[3];
         }
 
         private void setAccountLb()
@@ -101,7 +106,7 @@ namespace CopyPassword
             foreach (string row in File.ReadLines(backupFileName))
             {
                 var datas = row.Split(',');
-                var item = new string[] { datas[0], datas[1], datas[2] };
+                var item = new string[] { datas[0], datas[1], datas[2], datas[3] };
                 accountList.Add(item);
 
                 if (account_lb.Items.Contains(datas[0]) == false)
