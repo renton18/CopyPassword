@@ -35,11 +35,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.name_tb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // add_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(98, 87);
+            this.add_btn.Location = new System.Drawing.Point(126, 144);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(106, 31);
             this.add_btn.TabIndex = 4;
@@ -49,16 +51,16 @@
             // 
             // id_tb
             // 
-            this.id_tb.Location = new System.Drawing.Point(57, 37);
+            this.id_tb.Location = new System.Drawing.Point(67, 37);
             this.id_tb.Name = "id_tb";
-            this.id_tb.Size = new System.Drawing.Size(147, 19);
+            this.id_tb.Size = new System.Drawing.Size(165, 19);
             this.id_tb.TabIndex = 2;
             // 
             // pass_tb
             // 
-            this.pass_tb.Location = new System.Drawing.Point(57, 62);
+            this.pass_tb.Location = new System.Drawing.Point(67, 62);
             this.pass_tb.Name = "pass_tb";
-            this.pass_tb.Size = new System.Drawing.Size(147, 19);
+            this.pass_tb.Size = new System.Drawing.Size(165, 19);
             this.pass_tb.TabIndex = 3;
             // 
             // label1
@@ -81,9 +83,9 @@
             // 
             // name_tb
             // 
-            this.name_tb.Location = new System.Drawing.Point(57, 12);
+            this.name_tb.Location = new System.Drawing.Point(67, 12);
             this.name_tb.Name = "name_tb";
-            this.name_tb.Size = new System.Drawing.Size(147, 19);
+            this.name_tb.Size = new System.Drawing.Size(165, 19);
             this.name_tb.TabIndex = 1;
             // 
             // label3
@@ -95,11 +97,30 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Name";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 12);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "DETAIL";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 87);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 51);
+            this.textBox1.TabIndex = 7;
+            // 
             // AddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(214, 125);
+            this.ClientSize = new System.Drawing.Size(240, 179);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.name_tb);
             this.Controls.Add(this.label2);
@@ -123,5 +144,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox name_tb;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
