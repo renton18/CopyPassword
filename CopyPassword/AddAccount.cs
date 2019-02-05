@@ -36,7 +36,7 @@ namespace CopyPassword
             }
 
             string FileName = Properties.Settings.Default.backupFileName;
-            string accountData = name_tb.Text + "," + id_tb.Text + "," + pass_tb.Text + Environment.NewLine;
+            string accountData =  name_tb.Text + "\t" + id_tb.Text + "\t" + pass_tb.Text + "\t" + detailbTb.Text + "\t" + mailTb.Text + Environment.NewLine;
             File.AppendAllText(FileName, accountData);
 
             this.Close();

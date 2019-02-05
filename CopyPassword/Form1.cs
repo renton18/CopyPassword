@@ -24,6 +24,7 @@ namespace CopyPassword
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            ActiveControl = this.searchTb;
             setAccountLb();
         }
 
@@ -74,6 +75,10 @@ namespace CopyPassword
         private void account_lb_SelectedIndexChanged(object sender, EventArgs e)
         {
             var idList = accountList.Where(a => a[0] == account_lb.SelectedItem.ToString());
+            if (idList.Count() == 0)
+            {
+                return;
+            }
 
             id_lb.Items.Clear();
             foreach (var item in idList)
@@ -97,16 +102,17 @@ namespace CopyPassword
             account_lb.Items.Clear();
             id_lb.Items.Clear();
 
+            //ファイル有無の確認
             if (File.Exists(backupFileName) != true)
             {
                 return;
             }
 
             accountList.Clear();
-            foreach (string row in File.ReadLines(backupFileName))
+            foreach (string row in File.ReadLines(backupFileName, Encoding.GetEncoding("shift_jis")))
             {
-                var datas = row.Split(',');
-                var item = new string[] { datas[0], datas[1], datas[2], datas[3] };
+                var datas = row.Split('\t');
+                var item = new string[] { datas[0], datas[1], datas[2], datas[3], datas[4] };
                 accountList.Add(item);
 
                 if (account_lb.Items.Contains(datas[0]) == false)
@@ -117,6 +123,12 @@ namespace CopyPassword
 
             account_lb.SelectedIndex = 0;
             id_lb.SelectedIndex = 0;
+        }
+
+        private void searchTb_TextChanged(object sender, EventArgs e)
+        {
+            var searchWord = searchTb.Text.Trim();
+            account_lb.DataSource = accountList.Where(a => a[0].ToUpper().Contains(searchWord.ToUpper())).Select(a => a[0]).ToList();
         }
     }
 }
